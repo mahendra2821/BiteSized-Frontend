@@ -1,35 +1,3 @@
-// import React, { useEffect, useState } from "react";
-// import WelcomePage from "./WelcomePage";
-// import AuthForm from "./AuthForm";
-
-// export default function AuthGate() {
-//   const [user, setUser] = useState(null);
-
-//   useEffect(() => {
-//     const stored = localStorage.getItem("bitesizedUser");
-//     if (stored) {
-//       setUser(JSON.parse(stored));
-//     }
-//   }, []);
-
-//   return (
-//     <div className="h-screen  flex items-center justify-center bg-gray-900">
-//       {user ? (
-//         <WelcomePage user={user} onLogout={() => {
-//           localStorage.removeItem("bitesizedUser");
-//           setUser(null);
-//         }} />
-//       ) : (
-//         <AuthForm onAuth={(newUser) => {
-//           localStorage.setItem("bitesizedUser", JSON.stringify(newUser));
-//           setUser(newUser);
-//         }} />
-//       )}
-//     </div>
-//   );
-// }
-
-
 
 
 

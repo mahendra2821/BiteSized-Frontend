@@ -1,6 +1,5 @@
 // src/pages/ClientsPage.jsx
 import React from "react";
-// import ActiveClients from "../dashboard/ActivePlans/AvtiveClients";
 
 const ActiveClients = () => {
   const clients = [
