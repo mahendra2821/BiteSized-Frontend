@@ -11,8 +11,8 @@ const AboutUs = () => {
   return (
     <div className="min-h-screen p-6 md:mt-0 bg-gradient-to-b from-green-100 via-green-300 to-green-400">
       {/* Header */}
-      <div className="max-w-5xl mx-auto text-center mb-16">
-        <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 text-green-800 drop-shadow-md">
+      <div className="max-w-5xl mx-auto text-center mb-16 md:mt-10">
+        <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 mt-10  text-green-800 drop-shadow-md">
           About Us
         </h1>
         <p className="text-lg sm:text-xl max-w-3xl mx-auto text-green-900/80 leading-relaxed">

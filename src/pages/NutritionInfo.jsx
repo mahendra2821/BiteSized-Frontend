@@ -205,7 +205,7 @@ const foodData = [
 
 const NutritionCard = ({ item }) => (
   <div
-    className="mt-7 bg-white rounded-3xl shadow-xl p-6 border border-gray-200
+    className="md:mt-0 bg-white rounded-3xl shadow-xl p-6 border border-gray-200
                transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl
                cursor-pointer group"
     title={`${item.name} — ${item.category}`}
@@ -288,7 +288,7 @@ export default function App() {
       <div className="max-w-7xl mx-auto">
         <header
           className="bg-white rounded-3xl shadow-2xl p-8 flex flex-col md:flex-row md:items-center md:gap-6
-                     sticky top-5 z-20"
+                      top-5 z-20"
         >
           <h1 className="text-4xl font-extrabold text-green-900 flex items-center gap-4 mb-6 md:mb-0 select-none">
             <svg
@@ -356,3 +356,196 @@ export default function App() {
     </div>
   );
 }
+
+
+
+
+
+// import React, { useState } from "react";
+
+// // ✅ Example Food Data
+// const foodData = [
+//   {
+//     name: "Spinach",
+//     category: "Vegetable",
+//     calories: 23,
+//     protein: 2.9,
+//     carbs: 3.6,
+//     fat: 0.4,
+//     nutrients: "Rich in Vitamin K, A, and Iron.",
+//     benefits: ["Improves bone health", "Boosts immunity", "Supports digestion"],
+//   },
+//   {
+//     name: "Salmon",
+//     category: "Protein",
+//     calories: 208,
+//     protein: 20,
+//     carbs: 0,
+//     fat: 13,
+//     nutrients: "Omega-3 fatty acids, Vitamin B12, D.",
+//     benefits: ["Good for heart", "Brain function", "Reduces inflammation"],
+//   },
+//   {
+//     name: "Brown Rice",
+//     category: "Grain",
+//     calories: 111,
+//     protein: 2.6,
+//     carbs: 23,
+//     fat: 0.9,
+//     nutrients: "Magnesium, Fiber, B Vitamins.",
+//     benefits: ["Sustains energy", "Aids digestion", "Controls blood sugar"],
+//   },
+// ];
+
+// // ✅ Card Component
+// const NutritionCard = ({ item }) => (
+//   <div
+//     className="md:mt-0 bg-white rounded-3xl shadow-xl p-6 border border-gray-200
+//                transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl
+//                cursor-pointer group"
+//     title={`${item.name} — ${item.category}`}
+//   >
+//     <div className="flex justify-between items-start">
+//       <h2 className="text-xl font-extrabold text-green-900 group-hover:text-green-700 transition-colors">
+//         {item.name}
+//       </h2>
+//       <span className="bg-gradient-to-tr from-green-200 to-green-400 text-green-900 text-xs font-semibold px-3 py-1 rounded-full shadow-md select-none">
+//         {item.category}
+//       </span>
+//     </div>
+
+//     <div className="grid grid-cols-2 gap-5 mt-6">
+//       {[
+//         { label: "Calories", value: item.calories, color: "text-red-500", bg: "bg-red-50" },
+//         { label: "Protein", value: `${item.protein}g`, color: "text-green-600", bg: "bg-green-50" },
+//         { label: "Carbs", value: `${item.carbs}g`, color: "text-indigo-600", bg: "bg-indigo-50" },
+//         { label: "Fat", value: `${item.fat}g`, color: "text-yellow-600", bg: "bg-yellow-50" },
+//       ].map(({ label, value, color, bg }, i) => (
+//         <div
+//           key={i}
+//           className={`${bg} rounded-xl p-5 text-center flex flex-col items-center justify-center shadow-sm hover:shadow-lg transition-shadow`}
+//         >
+//           <p className={`text-3xl font-bold ${color} select-none`}>{value}</p>
+//           <p className="text-sm font-semibold text-gray-600 mt-1">{label}</p>
+//         </div>
+//       ))}
+//     </div>
+
+//     <div className="mt-6">
+//       <h3 className="font-semibold text-green-800 mb-2 flex items-center gap-2 text-sm">
+//         ⚡ Key Nutrients
+//         <span className="inline-block w-6 h-6 bg-gradient-to-r from-green-400 to-green-600 rounded-full animate-pulse" />
+//       </h3>
+//       <p className="text-gray-700 text-sm leading-relaxed">{item.nutrients}</p>
+//     </div>
+
+//     <div className="mt-6">
+//       <h3 className="font-semibold text-green-800 mb-3 flex items-center gap-2 text-sm">
+//         ❤️ Health Benefits
+//         <span className="inline-block w-6 h-6 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full animate-pulse" />
+//       </h3>
+//       <div className="flex flex-wrap gap-3 text-xs font-semibold text-green-900">
+//         {item.benefits.map((b, i) => (
+//           <span
+//             key={i}
+//             className="bg-green-100 hover:bg-green-200 cursor-default px-4 py-1 rounded-2xl shadow-sm transition-colors select-none"
+//             title={b}
+//           >
+//             {b}
+//           </span>
+//         ))}
+//       </div>
+//     </div>
+//   </div>
+// );
+
+// // ✅ Main App
+// export default function App() {
+//   const [search, setSearch] = useState("");
+//   const [category, setCategory] = useState("All");
+//   const [sortKey, setSortKey] = useState("calories");
+
+//   const categories = ["All", ...new Set(foodData.map((f) => f.category))];
+
+//   const filtered = foodData
+//     .filter(
+//       (item) =>
+//         (category === "All" || item.category === category) &&
+//         (item.name.toLowerCase().includes(search.toLowerCase()) ||
+//           item.benefits.some((b) => b.toLowerCase().includes(search.toLowerCase())) ||
+//           item.category.toLowerCase().includes(search.toLowerCase()))
+//     )
+//     .sort((a, b) => a[sortKey] - b[sortKey]);
+
+//   return (
+//     <div className="md:mt-0 bg-gradient-to-br from-green-50 via-green-100 to-green-50 min-h-screen p-8">
+//       <div className="max-w-7xl mx-auto">
+//         {/* Header */}
+//         <header className="bg-white rounded-3xl shadow-2xl p-8 flex flex-col md:flex-row md:items-center md:gap-6  top-5 z-20">
+//           <h1 className="text-4xl font-extrabold text-green-900 flex items-center gap-4 mb-6 md:mb-0 select-none">
+//             <svg
+//               className="w-10 h-10 text-green-500 animate-bounce"
+//               fill="none"
+//               stroke="currentColor"
+//               strokeWidth="2"
+//               viewBox="0 0 24 24"
+//               aria-hidden="true"
+//             >
+//               <path d="M5 13l4 4L19 7" />
+//             </svg>
+//             Nutrition Database
+//           </h1>
+
+//           {/* Search */}
+//           <input
+//             type="search"
+//             placeholder="Search vegetables, categories, or benefits..."
+//             className="flex-grow px-6 py-4 border border-green-300 rounded-2xl
+//                        focus:ring-4 focus:ring-green-400 focus:outline-none shadow-md
+//                        transition duration-300 hover:ring-2 hover:ring-green-300 text-lg"
+//             value={search}
+//             onChange={(e) => setSearch(e.target.value)}
+//           />
+
+//           {/* Category */}
+//           <select
+//             className="mt-4 md:mt-0 px-5 py-4 rounded-2xl border border-green-300 shadow-md
+//                        transition hover:shadow-lg focus:ring-4 focus:ring-green-400 text-lg"
+//             value={category}
+//             onChange={(e) => setCategory(e.target.value)}
+//           >
+//             {categories.map((c, i) => (
+//               <option key={i} value={c}>
+//                 {c}
+//               </option>
+//             ))}
+//           </select>
+
+//           {/* Sort */}
+//           <select
+//             className="mt-4 md:mt-0 px-5 py-4 rounded-2xl border border-green-300 shadow-md
+//                        transition hover:shadow-lg focus:ring-4 focus:ring-green-400 text-lg"
+//             value={sortKey}
+//             onChange={(e) => setSortKey(e.target.value)}
+//           >
+//             <option value="calories">Sort by Calories</option>
+//             <option value="protein">Sort by Protein</option>
+//             <option value="carbs">Sort by Carbs</option>
+//             <option value="fat">Sort by Fat</option>
+//           </select>
+//         </header>
+
+//         {/* Results */}
+//         <main className="mt-12 grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 transition-all duration-500">
+//           {filtered.length ? (
+//             filtered.map((item, idx) => <NutritionCard key={idx} item={item} />)
+//           ) : (
+//             <p className="text-center col-span-full text-green-800 text-xl font-semibold mt-16">
+//               No results found for "{search}"
+//             </p>
+//           )}
+//         </main>
+//       </div>
+//     </div>
+//   );
+// }

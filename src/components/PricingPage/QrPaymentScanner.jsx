@@ -23,7 +23,7 @@ export default function QrPaymentScanner() {
   };
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-6 py-16 bg-gradient-to-br from-green-50 via-green-100 to-green-200">
+    <section className="min-h-screen md:mt-0 flex flex-col items-center justify-center px-6 py-16 bg-gradient-to-br from-green-50 via-green-100 to-green-200">
       {/* Header */}
       <motion.h2
         className="text-3xl sm:text-4xl font-extrabold text-green-800 mb-4 text-center drop-shadow-md"

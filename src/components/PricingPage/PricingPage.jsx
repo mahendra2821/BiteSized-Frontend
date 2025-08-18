@@ -65,7 +65,7 @@ export default function PricingPage() {
 
   return (
     <section
-      className="min-h-screen md:mt-0 p-8 relative overflow-hidden"
+      className="min-h-screen md:mt-0  p-8 relative overflow-hidden"
       style={{
         background: "radial-gradient(circle at top left, #a1ffce, #faffd1, #f7d1ff)",
       }}
@@ -79,7 +79,7 @@ export default function PricingPage() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-5xl font-extrabold text-center text-green-900 mb-12 drop-shadow-lg"
+        className="text-5xl mt-10 font-extrabold text-center text-green-900 mb-12 drop-shadow-lg"
       >
         🌟 Choose Your Plan
       </motion.h2>

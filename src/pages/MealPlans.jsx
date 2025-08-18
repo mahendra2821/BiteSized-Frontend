@@ -17,7 +17,7 @@ const MealPlans = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
-        className="flex justify-center mb-6 p-1 rounded-2xl shadow-lg backdrop-blur-md bg-white/70 border border-green-200"
+        className="flex justify-center mt-10 mb-6 p-1 rounded-2xl shadow-lg backdrop-blur-md bg-white/70 border border-green-200"
       >
         {['daily', 'weekly'].map((tab) => (
           <button

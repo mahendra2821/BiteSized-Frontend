@@ -32,7 +32,7 @@ export default function PlanDetailsPage() {
   const theme = colorThemes[plan.color] || colorThemes.green;
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center p-6 bg-gradient-to-br from-green-50 via-green-100 to-green-200">
+    <section className="min-h-screen flex flex-col md:mt-0 items-center justify-center p-6 bg-gradient-to-br from-green-50 via-green-100 to-green-200">
       <motion.div
         className="w-full max-w-md bg-white rounded-3xl shadow-2xl border border-green-200 p-8 sm:p-10 relative overflow-hidden"
         initial={{ opacity: 0, y: 20 }}
