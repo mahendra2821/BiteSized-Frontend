@@ -243,6 +243,14 @@ function App() {
             }
           />
           <Route
+            path="/registered-users"
+            element={
+              <ProtectedRoute>
+                <RegistrationList />
+              </ProtectedRoute>
+            }
+          />
+          <Route
             path="/clients"
             element={
               <ProtectedRoute>

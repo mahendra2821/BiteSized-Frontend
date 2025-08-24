@@ -1,5 +1,6 @@
 
 
+
 import {
   CalendarDays,
   BarChart3,
@@ -9,6 +10,7 @@ import {
   Menu,
   X,
   Phone,
+  UserPlus,
   Info,
 } from "lucide-react";
 import { useState } from "react";
@@ -20,6 +22,8 @@ const menu = [
   { label: "Nutrition Info", icon: <Apple size={20} />, path: "/nutrition-info" },
   { label: "Client Management", icon: <Users2 size={20} />, path: "/client-management" },
   { label: "Pricing Plans", icon: <DollarSign size={20} />, path: "/pricing-plans" },
+    { label: "Registered Users", icon: <UserPlus size={20} />, path: "/registered-users" },
+
   { label: "Contact Us", icon: <Phone size={20} />, path: "/contact-us" },
   { label: "About Us", icon: <Info size={20} />, path: "/about-us" },
 ];
@@ -31,7 +35,10 @@ export default function Sidebar() {
     <>
       {/* Mobile Header */}
       <header className="fixed top-0 left-0 w-full bg-gradient-to-r from-green-500 to-green-700 text-white p-4 flex justify-between items-center z-50 shadow-lg md:hidden">
-        <h1 className="font-bold text-lg tracking-wide">Bitesized</h1>
+        <div className="flex items-center space-x-2">
+          <h1 className="font-bold text-lg tracking-wide">BiteSized</h1>
+          <Apple className="w-6 h-6 text-yellow-300" />
+        </div>
         <button onClick={() => setOpen(true)}>
           <Menu className="w-6 h-6 hover:text-yellow-300 transition-colors" />
         </button>
@@ -54,7 +61,10 @@ export default function Sidebar() {
       >
         {/* Close Icon (Mobile) */}
         <div className="flex justify-between items-center mb-8 md:hidden">
-          <h1 className="text-2xl font-bold tracking-wider">Bitesized</h1>
+          <div className="flex items-center space-x-2">
+            <h1 className="text-2xl font-bold tracking-wider">BiteSized</h1>
+            <Apple className="w-6 h-6 text-yellow-300" />
+          </div>
           <button onClick={() => setOpen(false)}>
             <X className="w-6 h-6 hover:text-red-300 transition-colors" />
           </button>
@@ -62,7 +72,10 @@ export default function Sidebar() {
 
         {/* Branding (Desktop) */}
         <div className="hidden md:flex flex-col items-start mb-8">
-          <h1 className="text-3xl font-extrabold tracking-wider">Bitesized</h1>
+          <div className="flex items-center space-x-2">
+            <h1 className="text-3xl font-extrabold tracking-wider">BiteSized</h1>
+            <Apple className="w-7 h-7 text-yellow-300" />
+          </div>
           <p className="text-sm text-green-100 mt-1">Professional Meal Planning</p>
         </div>
 
@@ -87,14 +100,11 @@ export default function Sidebar() {
             </NavLink>
           ))}
         </nav>
-
-        {/* Footer / Optional */}
-        <div className="hidden md:flex flex-col mt-auto text-green-100 text-xs font-light space-y-1">
-     
-        </div>
       </aside>
     </>
   );
 }
+
+
 
 

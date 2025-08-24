@@ -28,7 +28,7 @@ export default function ScheduleConsultationPage() {
   const [loading, setLoading] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
-  const correctPassword = "admin123";
+  const correctPassword = "2821";
 
   const handlePasswordSubmit = (e) => {
     e.preventDefault();

@@ -42,7 +42,7 @@ export default function ContactUs() {
 
     setSending(true);
     emailjs
-      .sendForm("Mahe", "YOUR_TEMPLATE_ID", form.current, "rosi3VkNC9rRXTHQj")
+      .sendForm("Mahe", "template_tshg79p", form.current, "rosi3VkNC9rRXTHQj")
       .then(() => {
         setSubmitted(true);
         toast.success("Message sent successfully!");
